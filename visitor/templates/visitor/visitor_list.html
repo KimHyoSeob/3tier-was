@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">방명록</h1>
+    <p class="lead text-center">클릭하면 자세히 볼 수 있습니다.</p>
+    <ul class="list-group">
+        {% for visitor in visitor_list %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <span class="badge text-bg-warning mb-2" style="font-size: 1.2em;">{{ visitor.name }}</span><br>
+                <span class="badge text-bg-info" style="font-size: 1.2em;">{{ visitor.content }}</span>
+            </div>
+            <div class="d-flex align-items-center">
+                <a href="/visitor/visitor_detail/{{ visitor.id }}" class="btn btn-primary btn-sm mr-2">자세히 보기</a>
+                <a href="/visitor/visitor_delete/{{ visitor.id }}" class="btn btn-danger btn-sm">삭제</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

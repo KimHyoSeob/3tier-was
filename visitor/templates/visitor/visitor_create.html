@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card mt-5 shadow-lg rounded">
+                <div class="card-header bg-dark text-white">
+                    <h1 class="text-center mb-0">방명록 작성</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="{{ form.name.id_for_label }}" class="col-sm-3 col-form-label">이름</label>
+                            <div class="col-sm-9">
+                                {{ form.name }}
+                                {% if form.name.errors %}
+                                <small class="form-text text-danger">{{ form.name.errors }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="{{ form.email.id_for_label }}" class="col-sm-3 col-form-label">이메일</label>
+                            <div class="col-sm-9">
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                <small class="form-text text-danger">{{ form.email.errors }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="{{ form.day.id_for_label }}" class="col-sm-3 col-form-label">날짜</label>
+                            <div class="col-sm-9">
+                                {{ form.day }}
+                                {% if form.day.errors %}
+                                <small class="form-text text-danger">{{ form.day.errors }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="{{ form.content.id_for_label }}" class="col-sm-3 col-form-label">내용</label>
+                            <div class="col-sm-9">
+                                {{ form.content }}
+                                {% if form.content.errors %}
+                                <small class="form-text text-danger">{{ form.content.errors }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                                <button type="submit" class="btn btn-primary mt-3">제출</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

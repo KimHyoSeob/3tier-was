@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container" style="max-width: 100%;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5" style="overflow-x: hidden;">
+                <div class="card-header bg-primary text-white">
+                    <h1 class="mb-0">방명록 홈</h1>
+                </div>
+                <div class="card-body">
+                    <p class="lead">이곳은 현재 WAS 티어입니다. 정적 웹을 호스팅하는 WEB티어에서 프록시되었습니다.</p>
+                    <p class="lead">현재 위치는 그림과 같습니다.</p>
+                    <p class="lead">상단 네비게이션바에서 데이터베이스에 저장된 방명록을 확인할 수 있습니다.</p>
+                    <img src="{% static 'visitor/was.drawio.png' %}" class="img-fluid rounded mt-3" alt="WAS 이미지">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5">
+    <h2 class="text-center mb-4">현재 인스턴스 정보</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Instance ID:</strong> $INSTANCE_ID</li>
+                <li class="list-group-item"><strong>Availability Zone:</strong> $AVAILABILITY_ZONE</li>
+                <li class="list-group-item"><strong>Subnet ID:</strong> $SUBNET_ID</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
