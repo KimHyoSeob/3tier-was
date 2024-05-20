@@ -85,7 +85,7 @@ DATABASES = {
          'NAME': 'mydb',           # 데이터베이스 이름
          'USER': 'dbuser',       # MySQL 사용자 이름
          'PASSWORD': 'dbpassword',       # MySQL 비밀번호
-         'HOST': '$DB_ENDPOINT',            # DB 엔드포인트
+         'HOST': '$RDS_ENDPOINT',            # DB 엔드포인트
          'PORT': '3306',                 # MySQL 포트
      }
 }
